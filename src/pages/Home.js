@@ -34,7 +34,7 @@ const banners = [
 const Home = () => {
   return (
     <motion.div className="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      {/* --- Hero Section --- */}
+      {}
       <section className="hero">
         <div className="hero-text">
           <h1>Welcome to BeerBiceps</h1>
@@ -49,7 +49,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- Sponsor Scroller --- */}
+      {}
       <section className="sponsor-section">
         <h2 className="section-title">Our Sponsors 🤝</h2>
         <div className="logo-marquee">
@@ -61,7 +61,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- Banners Section --- */}
+      {}
       <section className="banners">
         {banners.map((banner, i) => (
           <div className="banner-box" key={i}>
