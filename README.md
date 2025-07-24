@@ -92,9 +92,37 @@ export const googleProvider = new GoogleAuthProvider();
 ## 📸 Screenshots
 
 💻 Desktop View (Light & Dark Mode)
-<p align="center"> <img src="public/images/desktop-light.png" width="48%" alt="Desktop Light Mode"/> <img src="public/images/desktop-dark.png" width="48%" alt="Desktop Dark Mode"/> </p>
+Home (Light)	Home (Dark)
+<img src="public/images/home-light.png" width="48%" alt="Home Light Mode" />	<img src="public/images/home-dark.png" width="48%" alt="Home Dark Mode" />
+
+About (Light)	About (Dark)
+<img src="public/images/about-light.png" width="48%" alt="About Light Mode" />	<img src="public/images/about-dark.png" width="48%" alt="About Dark Mode" />
+
+Products (Light)	Products (Dark)
+<img src="public/images/products-light.png" width="48%" alt="Products Light Mode" />	<img src="public/images/products-dark.png" width="48%" alt="Products Dark Mode" />
+
+Contact (Light)	Contact (Dark)
+<img src="public/images/contact-light.png" width="48%" alt="Contact Light Mode" />	<img src="public/images/contact-dark.png" width="48%" alt="Contact Dark Mode" />
+
+Login (Light)	Login (Dark)
+<img src="public/images/login-light.png" width="48%" alt="Login Light Mode" />	<img src="public/images/login-dark.png" width="48%" alt="Login Dark Mode" />
+------------------------------------------------------------------------------------------------------------------------------------------
 📱 Mobile View (Light & Dark Mode)
-<p align="center"> <img src="public/images/mobile-light.png" width="30%" alt="Mobile Light Mode"/> <img src="public/images/mobile-dark.png" width="30%" alt="Mobile Dark Mode"/> </p>
+
+Mobile Home (Light)	Mobile Home (Dark)
+<img src="public/images/mobile-home-light.png" width="30%" alt="Mobile Home Light Mode" />	<img src="public/images/mobile-home-dark.png" width="30%" alt="Mobile Home Dark Mode" />
+
+Mobile About (Light)	Mobile About (Dark)
+<img src="public/images/mobile-about-light.png" width="30%" alt="Mobile About Light Mode" />	<img src="public/images/mobile-about-dark.png" width="30%" alt="Mobile About Dark Mode" />
+
+Mobile Products (Light)	Mobile Products (Dark)
+<img src="public/images/mobile-product-light.png" width="30%" alt="Mobile Products Light Mode" />	<img src="public/images/mobile-product-dark.png" width="30%" alt="Mobile Products Dark Mode" />
+
+Mobile Contact (Light)	Mobile Contact (Dark)
+<img src="public/images/mobile-contact-light.png" width="30%" alt="Mobile Contact Light Mode" />	<img src="public/images/mobile-contact-dark.png" width="30%" alt="Mobile Contact Dark Mode" />
+
+Mobile Login (Light)	Mobile Login (Dark)
+<img src="public/images/mobile-login-light.png" width="30%" alt="Mobile Login Light Mode" />	<img src="public/images/mobile-login-dark.png" width="30%" alt="Mobile Login Dark Mode" />
 
 ## 📬Contact
 
