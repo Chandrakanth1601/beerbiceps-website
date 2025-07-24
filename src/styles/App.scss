@@ -1,28 +1,27 @@
-/* Global Variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
 :root {
-  --bg-color: #fffdf2;
-  --text-color: #1a1a1a;
-  --text-subtle: #444;
-  --text-heading: #000;
-  --accent-color: #d4af37;
-  --hover-color: #ffd700;
-  --card-bg: #ffffff;
-  --navbar-bg: #000000;
-  --navbar-shadow: rgba(0, 0, 0, 0.2);
+  --bg-color: #fefefe;
+  --text-color: #111111;
+  --navbar-bg: #ffffff;
+  --navbar-shadow: rgba(0, 0, 0, 0.1);
+  --accent-color: #d4a017;
+  --hover-color: #e5b300;
+  --card-bg: #f4f4f4;
 }
-
-/* Dark Mode Overrides */
 .dark-mode {
-  --bg-color: #121212;
-  --text-color: #f5f5f5;
-  --text-subtle: #dcdcdc;
-  --text-heading: #ffffff;
+  --bg-color: #111111;
+  --text-color: #ffffff;
+  --navbar-bg: #181818;
+  --navbar-shadow: rgba(255, 255, 255, 0.05);
+  --accent-color: #f9b233;
+  --hover-color: #ffc107;
   --card-bg: #1e1e1e;
-  --navbar-bg: #1a1a1a;
-  --navbar-shadow: rgba(255, 255, 255, 0.1);
 }
-
-/* App Layout */
 .app {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -30,26 +29,18 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-/* Heading Adjustments */
 h1, h2, h3, h4, h5 {
   color: var(--text-heading);
   transition: color 0.3s ease;
 }
-
-/* Buttons */
 button {
   font-family: inherit;
   font-size: 1rem;
 }
-
-/* Links */
 a {
   color: var(--accent-color);
   transition: color 0.3s ease;
 }
-
-/* Utility for Cards (Shared) */
 .card {
   background-color: var(--card-bg);
   border-radius: 12px;

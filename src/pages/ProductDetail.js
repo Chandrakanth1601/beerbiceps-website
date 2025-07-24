@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import './ProductDetail.scss';
@@ -50,7 +50,7 @@ const products = [
     id: 7,
     name: 'Motivation Wall Pack',
     price: 199,
-    image: '/images/Wallpapers.png',
+    image: '/images/Wall.png',
     description: '50+ high-resolution wallpapers curated to inspire you daily.'
   },
   {
@@ -65,9 +65,17 @@ const products = [
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
+  const [added, setAdded] = useState(false); // ✅ added line
+
   const product = products.find((p) => p.id === parseInt(id));
 
   if (!product) return <p style={{ padding: '2rem' }}>Product not found.</p>;
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    setAdded(true); // ✅ show message
+    setTimeout(() => setAdded(false), 2000); // ✅ hide after 2 seconds
+  };
 
   return (
     <div className="product-detail">
@@ -76,7 +84,8 @@ const ProductDetail = () => {
         <h2>{product.name}</h2>
         <p>{product.description}</p>
         <h3>₹{product.price}</h3>
-        <button onClick={() => addToCart(product)}>Add to Cart</button>
+        <button onClick={handleAddToCart}>Add to Cart</button>
+        {added && <p style={{ color: 'green', marginTop: '10px' }}>✔ Added to cart!</p>} {/* ✅ new line */}
       </div>
     </div>
   );

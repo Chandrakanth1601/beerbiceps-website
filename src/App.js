@@ -1,4 +1,3 @@
-// --- File: App.js ---
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
@@ -6,13 +5,14 @@ import About from './pages/About';
 import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import Contact from './pages/Contact';
-import Cart from './pages/Cart'; // ✅ NEW
+import Cart from './pages/Cart';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import './styles/App.scss';
 import { AnimatePresence } from 'framer-motion';
-import { CartProvider } from './context/CartContext'; // ✅ NEW
+import { CartProvider } from './context/CartContext';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -25,8 +25,9 @@ function AnimatedRoutes() {
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} /> {/* ✅ Correct placement */}
         <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<Cart />} /> {/* ✅ NEW */}
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </AnimatePresence>
   );
@@ -36,7 +37,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
 
   return (
-    <CartProvider> {/* ✅ Wrap your app with CartProvider */}
+    <CartProvider>
       <div className={`app ${darkMode ? 'dark-mode' : 'light-mode'}`}>
         <Router>
           <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
