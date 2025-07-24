@@ -34,6 +34,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     signOut(auth).then(() => {
       localStorage.removeItem('user');
       setUser(null);
+      setMenuOpen(false);
       navigate('/login');
     });
   };
@@ -41,37 +42,29 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
         <h2>BeerBiceps</h2>
       </div>
 
-      <div className="navbar-center">
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
-        </button>
-        <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-          <NavLink to="/" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
-          <NavLink to="/about" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink>
-          <NavLink to="/products" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>Products</NavLink>
-          <NavLink to="/contact" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
-          {!user && (
-            <NavLink to="/login" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>Login</NavLink>
-          )}
-        </div>
+      <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
+        <NavLink to="/" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
+        <NavLink to="/about" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink>
+        <NavLink to="/products" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>Products</NavLink>
+        <NavLink to="/contact" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
+        {!user && (
+          <NavLink to="/login" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>Login</NavLink>
+        )}
+        {user && (
+          <button className="logout-btn-mobile" onClick={handleLogout}>Logout</button>
+        )}
       </div>
 
       <div className="navbar-right">
         <div className="cart-container">
-          <NavLink to="/cart" className="cart-link" onClick={() => setMenuOpen(false)}>
-            🛒
-          </NavLink>
-          {cartItems.length > 0 && (
-            <span className="cart-count">{cartItems.length}</span>
-          )}
+          <NavLink to="/cart" className="cart-link" onClick={() => setMenuOpen(false)}>🛒</NavLink>
+          {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
         </div>
-        <button
-          className="toggle-button"
-          onClick={() => setDarkMode(prev => !prev)}
-        >
+        <button className="toggle-button" onClick={() => setDarkMode(prev => !prev)}>
           {darkMode ? '🌙' : '☀️'}
         </button>
 
